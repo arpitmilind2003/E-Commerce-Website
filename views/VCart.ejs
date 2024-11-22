@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">Admin Panel</div>
+        <div class="pogo">WELCOME</div>
+
+                <div class="user-profile">
+            <img src="avatar.png" alt="User Avatar" class="avatar">
+            <span class="username">Admin</span>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <ul>
+            <li><a href="product">View product</a></li>
+            <li><a href="change_password">change password</a></li>
+            <li><a href="View_order">View order</a></li>
+            <li><a href="logout">logout</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+           <main class="main-content">
+            <section class="analytics">
+                    </section>
+<section class="recent-activities">
+<table border='1'>
+<tr>
+<th>Email</th>
+<th>Product_id</th>
+<th>Product_price</th>
+<th>Product_name</th>
+<th>Product_description</th>
+</tr>
+<% data.forEach((entry)=>
+{%>
+<tr>
+<td><%=entry.email %></td>
+<td><%=entry.pid %></td>
+<td><%=entry.price %></td>
+<td><%=entry.pname %></td>
+<td><%=entry.pdes %></td>
+<td><a href="DeleteVCart?pid=<%=entry.pid%>">Delete Cart</a></td>
+<td><a href="OrderVCart?pid=<%=entry.pid%>">Order Cart</a></td>
+
+</tr>
+<%});%>
+</table>
+</section>
+</main>
+ </body>
+</html>

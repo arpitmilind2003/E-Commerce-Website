@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">Admin Panel</div>
+        <div class="pogo">WELCOME</div>
+
+                <div class="user-profile">
+            <img src="avatar.png" alt="User Avatar" class="avatar">
+            <span class="username">Admin</span>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <ul>
+            <li><a href="addproduct">Add product</a></li>
+            <li><a href="ViProduct">View product</a></li>
+            <li><a href="ViUser">View user</a></li>
+            <li><a href="ViEnquire">View enquire</a></li>
+            <li><a href="#">View order</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+<main class="main-content">
+            <section class="analytics">
+                    </section>
+<section class="recent-activities">
+<table border='1'>
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>password</th>
+</tr>
+<% data.forEach((entry)=>
+{%>
+<tr>
+<td><%=entry.name %></td>
+<td><%=entry.email %></td>
+<td><%=entry.password %></td>
+<td><a href="DeleteEnquire?email=<%=entry.email%>">Delete Enquire</a></td>
+</tr>
+<%});%>
+</table>
+</section>
+</main>
+ </body>
+</html>

@@ -1,0 +1,35 @@
+1) How to create a Server--------------->>
+
+import express from "express";
+const app=express();
+
+const port=4000;
+app.listen(port,()=>{
+    console.log(`Server running at port ${port}`);
+});
+===================================================================================
+2) basic thinks to create a server============
+
+ import express from "express";
+ import cookieParser from "cookie-parser";
+ import cors from "cors";
+const app=express();
+
+// middleware
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+app.use(cookieParser());
+
+
+const corsOptions={
+    origin:'http//localhost:5173',
+    Credentials:true
+}
+app.use(cors(corsOptions));
+
+const port=4000;
+app.listen(port,()=>{
+    console.log(`Server running at port ${port}`);
+});
+==================================================================================
+3)
