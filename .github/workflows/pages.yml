@@ -6,19 +6,22 @@ on:
       - main
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Setup Pages
-        uses: actions/setup-pages@v1
-
-      - name: Build and Deploy
+      - name: Build project
         run: |
           mkdir -p public
           cp -r * public
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          BRANCH: gh-pages
+          FOLDER: public
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
