@@ -14,9 +14,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build project
-        run: |
-          
-          cp -r * public
+        # run: |
+          # mkdir -p public
+          # cp -r * public
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
